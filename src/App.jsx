@@ -15,58 +15,58 @@ function App() {
 
 
 
-const flashcards = [
-  {
-    question: "What is the derivative of sin(x)?",
-    answer: "cos(x)",
-    category: "Math"
-  },
-  {
-    question: "What is the integral of x²?",
-    answer: "x³ / 3 + C",
-    category: "Math"
-  },
-  {
-    question: "What is the Pythagorean theorem?",
-    answer: "a² + b² = c²",
-    category: "Math"
-  },
-  {
-    question: "What is the formula for the area of a circle?",
-    answer: "πr²",
-    category: "Math"
-  },
-  {
-    question: "What is the derivative of ln(x)?",
-    answer: "1/x",
-    category: "Math"
-  },
-  {
-    question: "What is the time complexity of Binary Search?",
-    answer: "O(log n)",
-    category: "CS"
-  },
-  {
-    question: "What data structure uses FIFO?",
-    answer: "Queue",
-    category: "CS"
-  },
-  {
-    question: "What data structure uses LIFO?",
-    answer: "Stack",
-    category: "CS"
-  },
-  {
-    question: "What is the time complexity of Merge Sort?",
-    answer: "O(n log n)",
-    category: "CS"
-  },
-  {
-    question: "What does Big-O notation describe?",
-    answer: "Algorithm time or space complexity",
-    category: "CS"
-  }
-];
+  const flashcards = [
+    {
+      question: "What is the derivative of sin(x)?",
+      answer: "cos(x)",
+      category: "Math"
+    },
+    {
+      question: "What is the integral of x²?",
+      answer: "x³ / 3 + C",
+      category: "Math"
+    },
+    {
+      question: "What is the Pythagorean theorem?",
+      answer: "a² + b² = c²",
+      category: "Math"
+    },
+    {
+      question: "What is the formula for the area of a circle?",
+      answer: "πr²",
+      category: "Math"
+    },
+    {
+      question: "What is the derivative of ln(x)?",
+      answer: "1/x",
+      category: "Math"
+    },
+    {
+      question: "What is the time complexity of Binary Search?",
+      answer: "O(log n)",
+      category: "CS"
+    },
+    {
+      question: "What data structure uses FIFO?",
+      answer: "Queue",
+      category: "CS"
+    },
+    {
+      question: "What data structure uses LIFO?",
+      answer: "Stack",
+      category: "CS"
+    },
+    {
+      question: "What is the time complexity of Merge Sort?",
+      answer: "O(n log n)",
+      category: "CS"
+    },
+    {
+      question: "What does Big-O notation describe?",
+      answer: "Algorithm time or space complexity",
+      category: "CS"
+    }
+  ];
 
   return (
     <div>
@@ -81,7 +81,8 @@ const flashcards = [
       </h3>
       <h3>Number of cards: {flashcards.length}</h3>
       <Card question={flashcards[index].question}
-        answer={flashcards[index].answer}></Card>
+        answer={flashcards[index].answer}
+        category={flashcards[index].category}></Card>
       <div className='buttons'>
         <button onClick={previousCard} className='button-next'></button>
         <button onClick={nextCard} className='button-back'></button>
