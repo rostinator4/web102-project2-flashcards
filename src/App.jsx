@@ -1,34 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Card from './card'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const flashcards = [
+    {
+      question: "What is the time complexity of Binary Search?",
+      answer: "O(log n)"
+    },
+    {
+      question: "What data structure uses FIFO?",
+      answer: "Queue"
+    },
+    {
+      question: "What data structure uses LIFO?",
+      answer: "Stack"
+    },
+    {
+      question: "What is the derivative of sin(x)?",
+      answer: "cos(x)"
+    },
+    {
+      question: "What is the derivative of ln(x)?",
+      answer: "1/x"
+    },
+    {
+      question: "What is the integral of x²?",
+      answer: "x³/3 + C"
+    },
+    {
+      question: "What is the formula for the area of a circle?",
+      answer: "πr²"
+    },
+    {
+      question: "What is the time complexity of Merge Sort?",
+      answer: "O(n log n)"
+    },
+    {
+      question: "What does Σ (sigma) represent?",
+      answer: "Summation"
+    },
+    {
+      question: "What is the Pythagorean theorem?",
+      answer: "a² + b² = c²"
+    }
+  ];
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <h1>
+        Algorithm & Math Trainer
+      </h1>
+      <h3>
+        Practice key concepts used in mathematics and computer science.
+      </h3>
+      <h3>
+        Flip each card to test your understanding.
+      </h3>
+      <h3>Card count: {flashcards.length}</h3>
+      <Card></Card>
+      <div className='buttons'>
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+    </div>
+
   )
 }
 

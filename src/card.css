@@ -1,0 +1,20 @@
+.flashcard{
+    /* Set size relative to the viewport */
+  width: 50vw;
+  height: 45vh;
+
+  /* Centering the card inside its parent (like #root) */
+  margin: auto;
+
+background-color: rgba(255, 255, 255, 0.1);
+  
+  /* The "Glass" effect: blurs whatever is behind the card */
+ backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  /* Blue Shadow (Horizontal, Vertical, Blur, Spread, Color) */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  
+  /* Ensure text stays readable */
+  color: #1a1a1a;
+}
