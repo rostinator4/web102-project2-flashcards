@@ -1,7 +1,9 @@
 import './App.css'
 import Card from './card'
+import { useState } from 'react';
 
 function App() {
+
 
   const flashcards = [
     {
