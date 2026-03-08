@@ -15,48 +15,58 @@ function App() {
 
 
 
-  const flashcards = [
-    {
-      question: "What is the time complexity of Binary Search?",
-      answer: "O(log n)"
-    },
-    {
-      question: "What data structure uses FIFO?",
-      answer: "Queue"
-    },
-    {
-      question: "What data structure uses LIFO?",
-      answer: "Stack"
-    },
-    {
-      question: "What is the derivative of sin(x)?",
-      answer: "cos(x)"
-    },
-    {
-      question: "What is the derivative of ln(x)?",
-      answer: "1/x"
-    },
-    {
-      question: "What is the integral of x²?",
-      answer: "x³/3 + C"
-    },
-    {
-      question: "What is the formula for the area of a circle?",
-      answer: "πr²"
-    },
-    {
-      question: "What is the time complexity of Merge Sort?",
-      answer: "O(n log n)"
-    },
-    {
-      question: "What does Σ (sigma) represent?",
-      answer: "Summation"
-    },
-    {
-      question: "What is the Pythagorean theorem?",
-      answer: "a² + b² = c²"
-    }
-  ];
+const flashcards = [
+  {
+    question: "What is the derivative of sin(x)?",
+    answer: "cos(x)",
+    category: "Math"
+  },
+  {
+    question: "What is the integral of x²?",
+    answer: "x³ / 3 + C",
+    category: "Math"
+  },
+  {
+    question: "What is the Pythagorean theorem?",
+    answer: "a² + b² = c²",
+    category: "Math"
+  },
+  {
+    question: "What is the formula for the area of a circle?",
+    answer: "πr²",
+    category: "Math"
+  },
+  {
+    question: "What is the derivative of ln(x)?",
+    answer: "1/x",
+    category: "Math"
+  },
+  {
+    question: "What is the time complexity of Binary Search?",
+    answer: "O(log n)",
+    category: "CS"
+  },
+  {
+    question: "What data structure uses FIFO?",
+    answer: "Queue",
+    category: "CS"
+  },
+  {
+    question: "What data structure uses LIFO?",
+    answer: "Stack",
+    category: "CS"
+  },
+  {
+    question: "What is the time complexity of Merge Sort?",
+    answer: "O(n log n)",
+    category: "CS"
+  },
+  {
+    question: "What does Big-O notation describe?",
+    answer: "Algorithm time or space complexity",
+    category: "CS"
+  }
+];
 
   return (
     <div>

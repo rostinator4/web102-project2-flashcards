@@ -1,14 +1,14 @@
 import './card.css'
 import { useState } from 'react';
 
-const Card = ({ question, answer}) => {
+const Card = ({ question, answer, category}) => {
 
     const [isRevealed, setRevealed] = useState(false)
 
     const handleClick = () => {
         setRevealed(!isRevealed)
     }
-
+    
     return (
         <div className="flashcard-container" onClick={handleClick}>
             <div className={`flashcard-inner ${isRevealed ? 'is-revealed' : ''}`}>
