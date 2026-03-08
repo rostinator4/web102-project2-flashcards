@@ -16,7 +16,7 @@ const Card = ({ question, answer}) => {
                     <h2>{question}</h2>
                 </div>
                 <div className="flashcard-back">
-                    <p>{answer}</p>
+                    <h2>{answer}</h2>
                 </div>
             </div>
         </div>

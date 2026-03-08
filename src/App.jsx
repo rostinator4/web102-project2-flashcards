@@ -3,6 +3,16 @@ import Card from './card'
 import { useState } from 'react';
 
 function App() {
+  const [index, setIndex] = useState(0)
+
+  const nextCard = () => {
+    (index + 1) > flashcards.length - 1 ? setIndex(0) : setIndex(index + 1)
+  }
+
+  const previousCard = () => {
+    (index - 1) < 0 ? setIndex(flashcards.length - 1) : setIndex(index - 1)
+  }
+
 
 
   const flashcards = [
@@ -59,10 +69,12 @@ function App() {
       <h3>
         Flip each card to test your understanding.
       </h3>
-      <h3>Card count: {flashcards.length}</h3>
-      <Card></Card>
+      <h3>Number of cards: {flashcards.length}</h3>
+      <Card question={flashcards[index].question}
+        answer={flashcards[index].answer}></Card>
       <div className='buttons'>
-
+        <button onClick={previousCard} className='button-next'></button>
+        <button onClick={nextCard} className='button-back'></button>
       </div>
 
     </div>
