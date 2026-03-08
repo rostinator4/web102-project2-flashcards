@@ -1,19 +1,8 @@
 import './App.css'
 import Card from './card'
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 function App() {
-  const [index, setIndex] = useState(0)
-
-  const nextCard = () => {
-    (index + 1) > flashcards.length - 1 ? setIndex(0) : setIndex(index + 1)
-  }
-
-  const previousCard = () => {
-    (index - 1) < 0 ? setIndex(flashcards.length - 1) : setIndex(index - 1)
-  }
-
-
 
   const flashcards = [
     {
@@ -68,6 +57,32 @@ function App() {
     }
   ];
 
+
+  const shuffledOrder = useMemo(() => {
+    const order = [...Array(flashcards.length).keys()]
+
+    for (let i = order.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [order[i], order[j]] = [order[j], order[i]]
+    }
+
+    return order;
+  }, [flashcards.length])
+
+  const [index, setIndex] = useState(0)
+  const shuffledIndices = shuffledOrder
+
+  const nextCard = () => {
+    (index + 1) > shuffledIndices.length - 1 ? setIndex(0) : setIndex(index + 1)
+  }
+
+  const previousCard = () => {
+    (index - 1) < 0 ? setIndex(shuffledIndices.length - 1) : setIndex(index - 1)
+  }
+
+  const currentCard = flashcards[shuffledIndices[index]]
+
+
   return (
     <div>
       <h1>
@@ -80,9 +95,9 @@ function App() {
         Flip each card to test your understanding.
       </h3>
       <h3>Number of cards: {flashcards.length}</h3>
-      <Card question={flashcards[index].question}
-        answer={flashcards[index].answer}
-        category={flashcards[index].category}></Card>
+      <Card question={currentCard.question}
+        answer={currentCard.answer}
+        category={currentCard.category}></Card>
       <div className='buttons'>
         <button onClick={previousCard} className='button-next'></button>
         <button onClick={nextCard} className='button-back'></button>
